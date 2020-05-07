@@ -74,7 +74,7 @@ as the pyenv version then also return nil. This works around https://github.com/
   "Populate CONF with the required arguments."
   (let* ((host "localhost")
          (debug-port (dap--find-available-port))
-         (python-executable (dap-python--pyenv-executable-find dap-python-executable))
+         (python-executable (executable-find dap-python-executable))
          (python-args (or (plist-get conf :args) ""))
          (program (or (plist-get conf :target-module)
                       (plist-get conf :program)
